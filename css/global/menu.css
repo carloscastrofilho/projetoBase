@@ -1,0 +1,187 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 130px;
+  background-color: black;
+  padding-left: 5%;
+  z-index: 10;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+nav ul {
+  padding-right: 4%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start;
+  z-index: 10;
+}
+
+.menu li a:hover {
+  color: #e4a30b;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -45px;
+  color: white;
+  min-width: 300px;
+  z-index: 1;
+  text-align: left;
+}
+
+.menu-dropdown li:first-child {
+  margin-top: 15px;
+  padding: 5px;
+}
+
+.menu-dropdown li {
+  padding: 3px;
+}
+
+
+.menu-dropdown a {
+  display: block;
+
+}
+
+.menu li:hover .menu-dropdown {
+  display: block;
+  background-color: black;
+}
+
+.hamburger-menu {
+  display: block;
+  margin-right: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.close-menu.show {
+  display: block;
+}
+
+.close-menu i {
+  display: none;
+}
+
+.menu-h {
+  display: none;
+}
+.menu-btns{
+  display: none;
+}
+
+@media (max-width:900px) {
+  .menu-btns {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 45px 13%;
+    display: block;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .hamburger-menu,
+  .close-menu {
+    display: block;
+    position: inherit;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .menu-h {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    padding: initial;
+  }
+
+  .menu li:hover .menu-dropdown {
+    display: none;
+    font-size: 1rem;
+  }
+
+  .menu-dropdown li:first-child {
+    padding-top: 0;
+  }
+
+  .menu-h li {
+    padding: 6px;
+    text-transform: capitalize;
+  }
+
+  .menu-h li a {
+    padding-top: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .menu-h li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px; 
+    background-color: transparent;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .menu-h li a:hover::before {
+    width: 100%; 
+    background-color: #e4a30b; 
+  }
+  
+  .menu-h.show {
+    top: 110px;
+    height: 34vh;
+    background-color: black;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .close-menu.show .hamburger-menu {
+    transform: rotate(360deg);
+  }
+
+  .close-menu {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .menu-h.show ul {
+    justify-content: start;
+    font-size: 0.82em;
+  }
+
+  .menu .show .close-menu {
+    display: block;
+  }
+}

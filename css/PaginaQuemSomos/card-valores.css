@@ -1,0 +1,33 @@
+.container-qsomos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin: 3% 7% 7% 7%;
+    grid-gap: 50px; 
+    max-width: 90%;
+    width: 1200px;
+    margin: 5% auto;
+}
+
+.card-qsomos {
+    background-color: rgb(218, 215, 215);
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+.card-qsomos img {
+    width: 100px;
+    margin-left: 40%;
+    align-items: center;
+}
+
+.card-qsomos h2, .card-qsomos p {
+    margin: 3%;
+}
+
+@media (max-width:800px) {
+    .container-qsomos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin: 5%;
+    }
+}
